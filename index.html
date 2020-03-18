@@ -1,71 +1,43 @@
 <html>
-<script>
-    function computerPlay() {
-        let computerSelection = Math.floor(Math.random() * 3);
-        if (computerSelection === 0) {
-            return "rock";
-        } else if (computerSelection === 1) {
-            return "paper";
-        } else {
-            return "scissors";
-        }
-    }
 
-    function playRound(playerSelection, computerSelection) {
-        playerSelection = prompt("Type rock, paper, or scissors").toLowerCase();
-        computerSelection = computerPlay();
+<head>
+    <meta charset="utf-8">
+    <title>Rock Paper Scissors</title>
+    <meta name="description" content="The Odin Project">
+    <meta name="author" content="Pedro Urbina">
+    <link rel="stylesheet" href="styles.css">
+</head>
 
-        console.log(`You played ${playerSelection}.`);
-        console.log(`Computer played ${computerSelection}.`);
+<body>
+    <h1>CHOOSE WISELY</h1>
 
-        if (playerSelection === computerSelection) {
-            return "It's a Tie!";
-        } else if (playerSelection === "rock") {
-            switch (computerSelection) {
-                case "paper":
-                    computerScore++;
-                    return "You Lose! Paper beats Rock";
-                case "scissors":
-                    playerScore++;
-                    return "You Win! Rock beats Scissors";
-            }
-        } else if (playerSelection === "paper") {
-            switch (computerSelection) {
-                case "rock":
-                    playerScore++;
-                    return "You Win! Paper beats Rock";
-                case "scissors":
-                    computerScore++;
-                    return "You Lose! Scissors beats Paper";
-            }
-        } else { //scissors
-            switch (computerSelection) {
-                case "rock":
-                    computerScore++;
-                    return "You Lose! Rock beats Scissors";
-                case "paper":
-                    playerScore++;
-                    return "You Win! Scissors beats Paper";
-            }
-        }
-    }
+    <div id="button-container">
+        <img id="rock-btn" class="btn" src="images/rock.png" alt="rock">
+        <img id="paper-btn" class="btn" src="images/paper.png" alt="paper">
+        <img id="scissors-btn" class="btn" src="images/scissors.png" alt="scissors">
+        <!--button id="rock" class="btn"><img src="images/rock.png" alt="rock"></button>
+        <button id="paper" class="btn"><img src="images/paper.png" alt="paper"></button>
+        <button id="scissors" class="btn"><img src="images/scissors.png" alt="scissors"></button-->
+    </div>
+    
+    <p id="player-move"></p>
+    <p id="computer-move"></p>
+    <p id="result"></p>
 
-    let playerScore = 0;
-    let computerScore = 0;
+    <h3>SCORE</h3>
+    <div id="score-container">
+        <div id="player-container">
+            <h4>PLAYER</h4>
+            <h4 id="player-score"></h4>
+        </div>
+        <div id="computer-container">
+            <h4>COMPUTER</h4>
+            <h4 id="computer-score"></h4>
+        </div>        
+    </div>
+    <div id="end-game"></div>
 
-    function game() {
-        for (i = 0; i < 5; i++) {
-            playRound();
-            console.log("Player: " + playerScore + " points" + "\tComputer: " + computerScore + " points");
-        }
-        if (playerScore > computerScore) {
-            return "You win the game!";
-        } else if (computerScore < playerScore) {
-            return "Sorry! You lost the game.";
-        } else {
-            return "The game is tied!";
-        }
-    }
-</script>
+    <script src="scripts.js"></script>
+</body>
 
 </html>

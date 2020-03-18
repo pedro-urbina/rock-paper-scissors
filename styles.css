@@ -1,0 +1,40 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#button-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.btn {
+    height: 100px;
+    width: auto;
+    border-width: 0px;
+}
+
+img {
+    width: auto;
+    height: 100px;
+}
+
+#score-container {
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+}
+
+#player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#computer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

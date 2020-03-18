@@ -1,0 +1,71 @@
+<html>
+<script>
+    function computerPlay() {
+        let computerSelection = Math.floor(Math.random() * 3);
+        if (computerSelection === 0) {
+            return "rock";
+        } else if (computerSelection === 1) {
+            return "paper";
+        } else {
+            return "scissors";
+        }
+    }
+
+    function playRound(playerSelection, computerSelection) {
+        playerSelection = prompt("Type rock, paper, or scissors").toLowerCase();
+        computerSelection = computerPlay();
+
+        console.log(`You played ${playerSelection}.`);
+        console.log(`Computer played ${computerSelection}.`);
+
+        if (playerSelection === computerSelection) {
+            return "It's a Tie!";
+        } else if (playerSelection === "rock") {
+            switch (computerSelection) {
+                case "paper":
+                    computerScore++;
+                    return "You Lose! Paper beats Rock";
+                case "scissors":
+                    playerScore++;
+                    return "You Win! Rock beats Scissors";
+            }
+        } else if (playerSelection === "paper") {
+            switch (computerSelection) {
+                case "rock":
+                    playerScore++;
+                    return "You Win! Paper beats Rock";
+                case "scissors":
+                    computerScore++;
+                    return "You Lose! Scissors beats Paper";
+            }
+        } else { //scissors
+            switch (computerSelection) {
+                case "rock":
+                    computerScore++;
+                    return "You Lose! Rock beats Scissors";
+                case "paper":
+                    playerScore++;
+                    return "You Win! Scissors beats Paper";
+            }
+        }
+    }
+
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function game() {
+        for (i = 0; i < 5; i++) {
+            playRound();
+            console.log("Player: " + playerScore + " points" + "\tComputer: " + computerScore + " points");
+        }
+        if (playerScore > computerScore) {
+            return "You win the game!";
+        } else if (computerScore < playerScore) {
+            return "Sorry! You lost the game.";
+        } else {
+            return "The game is tied!";
+        }
+    }
+</script>
+
+</html>
