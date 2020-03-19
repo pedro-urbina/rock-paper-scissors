@@ -82,16 +82,6 @@ let computerScore = 0;
 playerScoreDisplay.textContent = playerScore;
 computerScoreDisplay.textContent = computerScore;
 
-// if (playerScore < 5 && computerScore < 5) {
-//     btns.forEach(btn => btn.addEventListener('click', function (e) {
-//         displayResults(e.target.alt);
-//     }));
-// } else {
-//     const newGameBtn = document.createElement('button');
-//     newGameBtn.textContent = "New Game";
-//     body.appendChild(newGameBtn);
-// }
-
 btns.forEach(btn => btn.addEventListener('click', function (e) {
     if (playerScore < 5 && computerScore < 5) {
         displayResults(e.target.alt);
@@ -104,17 +94,3 @@ btns.forEach(btn => btn.addEventListener('click', function (e) {
         }
     }
 }));
-
-
-// if (playerScore < 5 && computerScore < 5) {
-//     const rockButton = document.querySelector('#rock-btn');
-//     const paperButton = document.querySelector('#paper-btn');
-//     const scissorsButton = document.querySelector('#scissors-btn');
-//     rockButton.addEventListener('click', displayResults("rock"));
-//     paperButton.addEventListener('click', displayResults("paper"));
-//     scissorsButton.addEventListener('click', displayResults("scissors"));
-// } else {
-//     const newGameBtn = document.createElement('button');
-//     newGameBtn.textContent = "New Game";
-//     body.appendChild(newGameBtn);
-// }
